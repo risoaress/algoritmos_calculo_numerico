@@ -1,6 +1,6 @@
 # implementação simples do método da bissecção em Python
 
-f = lambda x: x**2 - 1 # altere a função desejada aqui
+f = lambda x: x**2 + 1 # altere a função desejada aqui
 
 print("Digite um ponto x com f(x) < 0:")
 a = float(input())
@@ -8,6 +8,7 @@ print("Digite um ponto x com f(x) > 0:")
 b = float(input())
 
 mid = (a + b)/2
+has_zero = True
 
 e = 6
 zero = 10**(-e)
@@ -22,7 +23,8 @@ while(abs(f(mid)) > zero): # a comparação é uma inequação para evitar probl
 
     if f(a)*f(b) > 0:
         print("Não foi possível encontrar o zero da função com os pontos especificados")
+        has_zero = False
         break
 
-    
-print("o ponto do zero é: %.6f" % mid)
+if has_zero:
+    print("o ponto do zero é: %.6f" % mid)
